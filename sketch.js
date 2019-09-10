@@ -1,7 +1,14 @@
+rand = [];
+rand2 = [];
 w = 800;
 h = 800;
+
 function setup() { 
   createCanvas(w, h);
+  for(let i=0; i <12; i++){
+   append(rand, random(400)); 
+   append(rand2, random(70));
+  }
 } 
 
 function draw() { 
@@ -26,30 +33,34 @@ function minutes(){
   factor = h/60;
   noStroke();
   fill(	0);
-  filled = minute()*factor
-  rect(0, 0, w, filled);
-  
-  return filled;
+  rect(0, 0, w, minute()*factor);
+
 }
 
 function hours(){
-  for (let i = 0; i < hour(); i++){
-    spawnCloud();
-  }
-}
-
-function spawnCloud(){
-  translate(500,500);
+  //rand_val = random(w);
+  
+  for(let i=0; i<hour();i++){
+    translate(rand[i],rand[i]);
     noStroke();
     fill(255);
     for (let i = 0; i < 6; i ++) {
-      ellipse(0, 0, 80, 50);
+      ellipse(0,0,rand2[i],rand2[i]+25);
       rotate(PI/3);
-    } 
-  
+      
+    }
+  }
 }
 
-//
-
-
-
+/*
+function cloud(x, w) {
+  beginShape();
+    noStroke();
+    fill(255);
+    for (let i = 0; i < 6; i ++) {
+      ellipse(x, x, w, w+30);
+      rotate(PI/3);
+    } 
+  endShape(CLOSE);
+}
+*/
