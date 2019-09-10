@@ -1,5 +1,5 @@
 function setup() { 
-  createCanvas(400, 400);
+  createCanvas(800, 800);
   
 } 
 
@@ -9,9 +9,9 @@ function draw() {
   //seconds 
   noStroke();
   fill(255);
-  ellipse(300,300,100,100);
+  ellipse(400,400,300,300);
   fill(255,209,220);
-  arc(300,300,100,100,1.5*PI,(second()/60*PI));
+  arc(400,400,300,300,1.5*PI,(second()/60*PI));
 
   
 
