@@ -1,10 +1,14 @@
+w = 800;
+h = 800;
 function setup() { 
-  createCanvas(800, 800);
+
+  createCanvas(h, h);
   
 } 
 
 function draw() { 
   background(0); //black background
+  minutes();
   seconds(); //tiny circular abstract clock 
 
   
@@ -22,6 +26,9 @@ function seconds(){
 }
 
 function minutes(){
-  
-  
+  //entire canvas is filled depending on the minutes passed
+  factor = h/60;
+  noStroke();
+  fill(209, 220, 255);
+  rect(0, 0, w, minute()*factor);
 }
