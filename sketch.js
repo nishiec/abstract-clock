@@ -6,7 +6,15 @@ h = 800;
 
 function setup() { 
   createCanvas(w, h);
-  for (let i = 0; i < hour(); i++){
+  currenthour = null;
+  if(hour() > 12){
+    currenthour= hour()-12; 
+  }
+  else{
+    currenthour=hour(); 
+  }
+  
+  for (let i = 0; i < currenthour; i++){
     clouds.push(new Cloud());
   }
 } 
