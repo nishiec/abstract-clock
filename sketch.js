@@ -1,13 +1,13 @@
 rand = [];
-rand2 = [];
+//rand2 = [];
 w = 800;
 h = 800;
 
 function setup() { 
   createCanvas(w, h);
   for(let i=0; i <12; i++){
-   append(rand, random(400)); 
-   append(rand2, random(70));
+   append(rand, random(100)); 
+   //append(rand2, random(70));
   }
 } 
 
@@ -41,11 +41,11 @@ function hours(){
   //rand_val = random(w);
   
   for(let i=0; i<hour();i++){
-    translate(rand[i],rand[i]);
+    translate(rand[i],rand[i+1]);
     noStroke();
     fill(255);
     for (let i = 0; i < 6; i ++) {
-      ellipse(0,0,rand2[i],rand2[i]+25);
+      ellipse(0,0,50, 80);
       rotate(PI/3);
       
     }
