@@ -1,13 +1,13 @@
 rand = [];
 //rand2 = [];
+clouds = [];
 w = 800;
 h = 800;
 
 function setup() { 
   createCanvas(w, h);
-  for(let i=0; i <12; i++){
-   append(rand, random(100)); 
-   //append(rand2, random(70));
+  for (let i = 0; i < hour(); i++){
+    clouds.push(new Cloud());
   }
 } 
 
@@ -40,6 +40,7 @@ function minutes(){
 function hours(){
   //rand_val = random(w);
   
+  /*
   for(let i=0; i<hour();i++){
     translate(rand[i],rand[i+1]);
     noStroke();
@@ -48,6 +49,29 @@ function hours(){
       ellipse(0,0,50, 80);
       rotate(PI/3);
       
+    }
+  }
+  */
+  for (let i = 0; i < clouds.length; i++) {
+    clouds[i].display();
+  }
+}
+
+// Cloud class
+class Cloud {
+  constructor() {
+    this.x = random(100);
+    this.y = random(100);
+  }
+
+  display() {
+    translate(this.x, this.y)
+    noStroke();
+    //color change so clouds are distinguishable and don't overlap
+    fill(random(0,255));
+    for (let i = 0; i < 6; i ++) {
+      ellipse(0,0, 50, 80);
+      rotate(PI/3);
     }
   }
 }
